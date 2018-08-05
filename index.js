@@ -75,9 +75,10 @@ passport.deserializeUser(function(user, done) {
 var https = require('https');
 var fs = require('fs');
 
+console.log("dirname ", __dirname)
 var options = {
-  key: fs.readFileSync( '/Users/duyle/Documents/NodeJS/passport_demo/localhost.key' ),
-  cert: fs.readFileSync( '/Users/duyle/Documents/NodeJS/passport_demo/localhost.crt' ),
+  key: fs.readFileSync( __dirname+'/localhost.key' ),
+  cert: fs.readFileSync( __dirname+'/localhost.crt' ),
   requestCert: false,
   rejectUnauthorized: false
 };
